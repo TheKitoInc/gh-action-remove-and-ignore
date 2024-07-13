@@ -1,6 +1,5 @@
 #!/bin/sh
 
-PATH_REMOVE=data
 test -z "${PATH_REMOVE}" && exit 1
 
 PATH_ROOT=$(git rev-parse --show-toplevel 2> /dev/null) || exit 2
