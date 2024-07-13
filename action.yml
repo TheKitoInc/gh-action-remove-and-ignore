@@ -1,7 +1,7 @@
 name: GH-ACTION-REMOVE-AND-IGNORE
 branding:
-  icon: package
-  color: green
+  icon: trash-2
+  color: red
 description: Remove file or directory from repository and ignore it in future commits.
 inputs:
   git-user-email:
