@@ -11,15 +11,16 @@ on:
       - master
 
 jobs:
-  clean-log-dir:
-    name: Clean log dir
+  GH-ACTION-REMOVE-AND-IGNORE:
     runs-on: ubuntu-latest
-    with:
-        github_token: ${{ env.TOKEN }}
     steps:
-      - uses: TheKitoInc/gh-action-tag-on-npm-version@master
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Clean log dir
+        uses: TheKitoInc/gh-action-remove-and-ignore@master
         with:
-            path-remove: log
+          path-remove: log
 ```
 
 
