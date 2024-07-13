@@ -12,14 +12,14 @@ git fetch && \
 git pull || exit 3
 
 test -f "$PATH_FULL"  && \
-rm -v "$PATH_FULL"  && \
+(rm -v "$PATH_FULL"  && \
 git add "$PATH_REMOVE" && \
-git commit -m "Remove file: $PATH_REMOVE" || exit 4
+git commit -m "Remove file: $PATH_REMOVE" || exit 4)
 
 test -d "$PATH_FULL"  && \
-rm -vr "$PATH_FULL"  && \
+(rm -vr "$PATH_FULL"  && \
 git add "$PATH_REMOVE" && \
-git commit -m "Remove directory: $PATH_REMOVE" || exit 5
+git commit -m "Remove directory: $PATH_REMOVE" || exit 5)
 
 cat .gitignore | grep "^$PATH_REMOVE$" > /dev/null || echo "$PATH_REMOVE" >> .gitignore && \
 git add .gitignore && \
