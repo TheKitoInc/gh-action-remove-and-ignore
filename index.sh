@@ -23,6 +23,6 @@ git commit -m "Remove directory: $PATH_REMOVE" || exit 5)
 
 cat .gitignore | grep "^$PATH_REMOVE$" > /dev/null || echo "$PATH_REMOVE" >> .gitignore && \
 git add .gitignore && \
-git commit -m "Ignore: $PATH_REMOVE" exit 6
+git commit -m "Ignore: $PATH_REMOVE" || exit 6
 
 git push || exit 7
