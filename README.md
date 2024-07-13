@@ -14,10 +14,12 @@ jobs:
   clean-log-dir:
     name: Clean log dir
     runs-on: ubuntu-latest
-
+    with:
+        github_token: ${{ env.TOKEN }}
     steps:
-      - uses: actions/checkout@v4
       - uses: TheKitoInc/gh-action-tag-on-npm-version@master
+        with:
+            path-remove: log
 ```
 
 
