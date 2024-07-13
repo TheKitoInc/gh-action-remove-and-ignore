@@ -18,9 +18,7 @@ runs:
   steps:
     - shell: sh
       run: |
-       ls -la
-       pwd
-       find
+       find ../../
        sh index.sh
       env:
         GIT_USER_NAME: ${{ inputs.git-user-name }}
